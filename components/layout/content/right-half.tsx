@@ -1,6 +1,15 @@
+"use client"
+
+import { useToast } from "@/components/toast/toast-provider"
 import { ChevronDown, Flag } from "lucide-react"
 
 export const RightHalf = () => {
+  const { showToast } = useToast()
+
+  const handleReserve = () => {
+    showToast("You won't be charged yet")
+  }
+
   return (
     <aside className="relative">
       <div className="sticky top-25">
@@ -77,7 +86,10 @@ export const RightHalf = () => {
           </div>
 
           {/* Reserve */}
-          <button className="h-12 w-full cursor-pointer rounded-full border-0 bg-[linear-gradient(to_right,#e61e4d_0%,#e31c5f_50%,#d70466_100%)] px-6 text-base font-medium text-white [transition:filter_0.15s,transform_0.05s] hover:bg-[linear-gradient(to_right,#d81b5f_0%,#c31a5b_50%,#bd0463_100%)] active:scale-[0.985]">
+          <button
+            className="h-12 w-full cursor-pointer rounded-full border-0 bg-[linear-gradient(to_right,#e61e4d_0%,#e31c5f_50%,#d70466_100%)] px-6 text-base font-medium text-white [transition:filter_0.15s,transform_0.05s] hover:bg-[linear-gradient(to_right,#d81b5f_0%,#c31a5b_50%,#bd0463_100%)] active:scale-[0.985]"
+            onClick={handleReserve}
+          >
             Reserve
           </button>
 

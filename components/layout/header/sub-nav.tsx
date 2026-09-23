@@ -1,32 +1,50 @@
 "use client"
 
+import { useToast } from "@/components/toast/toast-provider"
 import { Star } from "lucide-react"
 import { useEffect, useState } from "react"
 
+const sections = ["photos", "amenities", "reviews", "location"]
+
 export const SubNav = () => {
   const [show, setShow] = useState(false)
+  const [activeSection, setActiveSection] = useState("photos")
+
+  const { showToast } = useToast()
 
   useEffect(() => {
     const handleScroll = () => {
       const overview = document.getElementById("overview")
 
-      if (!overview) return
+      if (overview) {
+        setShow(overview.getBoundingClientRect().top <= 0)
+      }
 
-      const position = overview.getBoundingClientRect()
+      let currentSection = "photos"
 
-      setShow(position.top <= 0)
+      sections.forEach((section) => {
+        const element = document.getElementById(section)
+
+        if (element && element.getBoundingClientRect().top <= 100) {
+          currentSection = section
+        }
+      })
+
+      setActiveSection(currentSection)
     }
 
     handleScroll()
 
     window.addEventListener("scroll", handleScroll)
-    window.addEventListener("resize", handleScroll)
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
-      window.removeEventListener("resize", handleScroll)
     }
   }, [])
+
+  const handleReserve = () => {
+    showToast("You won't be charged yet")
+  }
 
   return (
     <nav
@@ -37,38 +55,52 @@ export const SubNav = () => {
       }`}
     >
       <div className="mx-auto flex h-16.5 max-w-7xl items-center justify-between px-20">
-        {/* Links */}
         <div className="flex gap-1">
           <a
             href="#photos"
-            className="relative px-2 py-5.5 text-sm font-medium text-[#222] hover:text-black"
+            className={`px-2 py-5.5 text-sm font-medium text-[#222] ${
+              activeSection === "photos"
+                ? "underline decoration-[1.5px] underline-offset-12"
+                : ""
+            }`}
           >
             Photos
           </a>
 
           <a
             href="#amenities"
-            className="relative px-2 py-5.5 text-sm font-medium text-[#222] hover:text-black"
+            className={`px-2 py-5.5 text-sm font-medium text-[#222] ${
+              activeSection === "amenities"
+                ? "underline decoration-[1.5px] underline-offset-12"
+                : ""
+            }`}
           >
             Amenities
           </a>
 
           <a
             href="#reviews"
-            className="relative px-2 py-5.5 text-sm font-medium text-[#222] hover:text-black"
+            className={`px-2 py-5.5 text-sm font-medium text-[#222] ${
+              activeSection === "reviews"
+                ? "underline decoration-[1.5px] underline-offset-12"
+                : ""
+            }`}
           >
             Reviews
           </a>
 
           <a
             href="#location"
-            className="relative px-2 py-5.5 text-sm font-medium text-[#222] hover:text-black"
+            className={`px-2 py-5.5 text-sm font-medium text-[#222] ${
+              activeSection === "location"
+                ? "underline decoration-[1.5px] underline-offset-12"
+                : ""
+            }`}
           >
             Location
           </a>
         </div>
 
-        {/* Right */}
         <div className="flex items-center gap-5">
           <div className="text-right text-[13px] leading-[1.2]">
             <p className="text-[15px] font-medium">
@@ -83,14 +115,15 @@ export const SubNav = () => {
               />
 
               <span>4.95</span>
-
               <span>·</span>
-
               <span>19 reviews</span>
             </div>
           </div>
 
-          <button className="h-10 cursor-pointer rounded-full bg-[linear-gradient(to_right,#e61e4d_0%,#e31c5f_50%,#d70466_100%)] px-5 text-sm font-medium text-white [transition:filter_0.15s,transform_0.05s] hover:bg-[linear-gradient(to_right,#d81b5f_0%,#c31a5b_50%,#bd0463_100%)] active:scale-[0.985]">
+          <button
+            onClick={handleReserve}
+            className="h-10 cursor-pointer rounded-full bg-[linear-gradient(to_right,#e61e4d_0%,#e31c5f_50%,#d70466_100%)] px-5 text-sm font-medium text-white hover:bg-[linear-gradient(to_right,#d81b5f_0%,#c31a5b_50%,#bd0463_100%)] active:scale-[0.985]"
+          >
             Reserve
           </button>
         </div>

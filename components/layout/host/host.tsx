@@ -1,4 +1,4 @@
-import { ShieldCheck } from "lucide-react"
+import { Check, ShieldCheck } from "lucide-react"
 
 import { Container } from "../container"
 import { BalloonIcon, GraduationCapIcon, ShieldIcon } from "@/app/icons/icons"
@@ -65,11 +65,13 @@ export const Host = () => {
                       className="size-22 rounded-full object-cover"
                     />
 
-                    <div className="absolute right-0 bottom-1 flex size-7 items-center justify-center rounded-full border-2 border-white bg-[#ff385c]">
-                      <ShieldCheck
-                        className="size-3.75 text-white"
-                        strokeWidth={2.2}
-                      />
+                    <div className="absolute right-1 bottom-0 flex size-6.5 items-center justify-center rounded-full border-[4.5px] border-white bg-[#ff385c]">
+                      <div className="flex items-center justify-center rounded-full border border-[#ff385c] p-0.75">
+                        <Check
+                          className="m-px size-3.5 text-center text-white"
+                          strokeWidth={2.5}
+                        />
+                      </div>
                     </div>
                   </div>
 
