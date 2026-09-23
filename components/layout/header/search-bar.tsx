@@ -5,7 +5,7 @@ export const SearchBar = () => {
     <div className="inline-flex h-12 cursor-pointer items-center justify-self-center rounded-[40px] border border-[#dddddd] bg-white px-2 shadow-[0_1px_4px_#00000014] transition-shadow duration-200 ease-in-out **:cursor-pointer hover:shadow-[0_2px_8px_#0000001f]">
       <div className="flex items-center gap-2 pr-4 pl-2">
         <img
-          src="/header/searchbar-house.png"
+          src="/images/ui/searchbar-house.png"
           alt=""
           className="block size-12 object-fill"
         />

@@ -1,4 +1,4 @@
-import AirbnbLogo from "@/public/header/logo"
+import AirbnbLogo from "@/public/images/header/logo"
 import { SearchBar } from "./search-bar"
 import { HostNav } from "./host"
 
