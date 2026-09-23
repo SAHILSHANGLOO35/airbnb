@@ -1,4 +1,7 @@
-const AirbnbLogo = ({ className = "" }) => {
+type AirbnbLogoProps = {
+  className?: string
+}
+const AirbnbLogo = ({ className }: AirbnbLogoProps) => {
   return (
     <svg
       viewBox="0 0 3490 1080"

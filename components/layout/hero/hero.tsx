@@ -1,6 +1,6 @@
-import { Grid3X3, Heart, Share } from "lucide-react"
-
 import { Container } from "../container"
+import Link from "next/link"
+import { GridDotsIcon, HeartIcon, ShareIcon } from "@/app/icons/icons"
 
 export const Hero = () => {
   return (
@@ -12,12 +12,12 @@ export const Hero = () => {
 
         <div className="flex shrink-0 gap-0.5">
           <button className="inline-flex cursor-pointer items-center gap-2 rounded-sm border-0 bg-transparent px-2.5 py-2 text-sm font-medium transition-[background,transform] duration-150 hover:bg-[#f2f2f2] active:scale-[0.96]">
-            <Share className="size-4" />
+            <ShareIcon className="size-4" />
             <span className="underline underline-offset-2">Share</span>
           </button>
 
           <button className="inline-flex cursor-pointer items-center gap-2 rounded-sm border-0 bg-transparent px-2.5 py-2 text-sm font-medium transition-[background,transform] duration-150 hover:bg-[#f2f2f2] active:scale-[0.96]">
-            <Heart className="size-4" />
+            <HeartIcon className="size-4" />
             <span className="underline underline-offset-2">Save</span>
           </button>
         </div>
@@ -32,8 +32,9 @@ export const Hero = () => {
             "/images/hero/hero-4.jpeg",
             "/images/hero/hero-5.jpeg",
           ].map((src, index) => (
-            <button
+            <Link
               key={src}
+              href="/?view=photos"
               className={`group relative block cursor-pointer overflow-hidden border-0 bg-[#eee] p-0 active:scale-[0.997] ${
                 index === 0 ? "row-span-2" : ""
               }`}
@@ -41,14 +42,17 @@ export const Hero = () => {
               <img src={src} alt="" className="block size-full object-cover" />
 
               <span className="pointer-events-none absolute inset-0 bg-transparent transition-colors duration-200 group-hover:bg-black/10" />
-            </button>
+            </Link>
           ))}
         </div>
 
-        <button className="absolute right-6 bottom-6 inline-flex cursor-pointer items-center gap-2 rounded-lg border border-[#222] bg-white px-3.75 py-1.75 text-xs leading-4 font-medium shadow-[0_2px_8px_#00000026] transition-[transform,background] duration-150 hover:bg-[#f7f7f7] active:scale-[0.96]">
-          <Grid3X3 className="size-3.75" />
+        <Link
+          href="/?view=photos"
+          className="absolute right-6 bottom-6 inline-flex cursor-pointer items-center gap-2 rounded-lg border border-[#222] bg-white px-3.75 py-1.75 text-xs leading-4 font-medium shadow-[0_2px_8px_#00000026] transition-[transform,background] duration-150 hover:bg-[#f7f7f7] active:scale-[0.96]"
+        >
+          <GridDotsIcon className="size-3.75" />
           Show all photos
-        </button>
+        </Link>
       </div>
     </Container>
   )

@@ -13,14 +13,16 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  // metadataBase: new URL(siteUrl),
-
   title: {
     default: "Airbnb Clone",
     template: "",
   },
 
   description: "Airbnb UI Clone.",
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 
   applicationName: "Payload",
 

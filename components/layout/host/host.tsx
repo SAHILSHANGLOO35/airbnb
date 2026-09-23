@@ -1,6 +1,7 @@
-import { GraduationCap, ShieldCheck, Venus } from "lucide-react"
+import { ShieldCheck } from "lucide-react"
 
 import { Container } from "../container"
+import { BalloonIcon, GraduationCapIcon, ShieldIcon } from "@/app/icons/icons"
 
 const coHosts = [
   {
@@ -103,13 +104,13 @@ export const Host = () => {
               {/* Host facts */}
               <div className="mt-5.5 flex flex-col gap-3.5">
                 <div className="flex items-center gap-3.5 text-[15px]">
-                  <Venus className="size-6 shrink-0 text-[#222]" />
+                  <BalloonIcon className="size-6 shrink-0 text-[#222]" />
 
                   <span>Born in the 80s</span>
                 </div>
 
                 <div className="flex items-center gap-3.5 text-[15px]">
-                  <GraduationCap className="size-6 shrink-0 text-[#222]" />
+                  <GraduationCapIcon className="size-6 shrink-0 text-[#222]" />
 
                   <span>Where I went to school: NICMAR GOA</span>
                 </div>
@@ -158,7 +159,7 @@ export const Host = () => {
               </button>
 
               <div className="mt-7.5 flex items-start gap-2.5 text-xs text-[#717171]">
-                <ShieldCheck className="size-6 shrink-0" strokeWidth={1.6} />
+                <ShieldIcon className="size-6 shrink-0" strokeWidth={1.6} />
 
                 <p>
                   To help protect your payment, always use Airbnb to send money

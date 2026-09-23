@@ -1,5 +1,4 @@
-import { CalendarX2, KeyRound, Shield } from "lucide-react"
-
+import { CalendarXIcon, KeyIcon, ShieldIcon } from "@/app/icons/icons"
 import { Container } from "../container"
 
 export const ThingsToKnow = () => {
@@ -14,7 +13,7 @@ export const ThingsToKnow = () => {
           <div className="grid grid-cols-3 gap-8">
             {/* Cancellation policy */}
             <div>
-              <CalendarX2
+              <CalendarXIcon
                 className="mb-4.5 size-6 text-[#222]"
                 strokeWidth={1.7}
               />
@@ -29,7 +28,7 @@ export const ThingsToKnow = () => {
               </p>
 
               <p className="mb-2 text-sm leading-normal">
-                Review this host’s full policy for details.
+                Review this host's full policy for details.
               </p>
 
               <button className="cursor-pointer border-0 bg-transparent p-0 text-sm font-medium underline underline-offset-2">
@@ -39,7 +38,7 @@ export const ThingsToKnow = () => {
 
             {/* House rules */}
             <div>
-              <KeyRound
+              <KeyIcon
                 className="mb-4.5 size-6 text-[#222]"
                 strokeWidth={1.7}
               />
@@ -63,7 +62,10 @@ export const ThingsToKnow = () => {
 
             {/* Safety */}
             <div>
-              <Shield className="mb-4.5 size-6 text-[#222]" strokeWidth={1.7} />
+              <ShieldIcon
+                className="mb-4.5 size-6 text-[#222]"
+                strokeWidth={1.7}
+              />
 
               <h3 className="mb-3.5 text-base font-medium">
                 Safety & property

@@ -1,6 +1,7 @@
-import { ChevronRight, Home, Minus, Plus, Search } from "lucide-react"
+import { ChevronRight, Minus, Plus, Search } from "lucide-react"
 
 import { Container } from "../container"
+import { HomeIcon } from "@/app/icons/icons"
 
 export const Location = () => {
   return (
@@ -24,9 +25,9 @@ export const Location = () => {
             />
 
             {/* Green map areas */}
-            <div className="absolute top-[30%] left-[28%] size-20 rounded-full bg-[#cfe3c8]" />
+            <div className="absolute top-[30%] left-[28%] size-24 rounded-full bg-[#cfe3c8]" />
 
-            <div className="absolute top-[48%] left-[66%] size-27.5 rounded-full bg-[#cfe3c8]" />
+            <div className="absolute top-[48%] left-[66%] size-32 rounded-full bg-[#cfe3c8]" />
 
             {/* Subtle grid */}
             <div
@@ -65,7 +66,7 @@ export const Location = () => {
 
             {/* Property pin */}
             <div className="absolute top-1/2 left-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#222] text-white shadow-[0_4px_12px_#0000004d]">
-              <Home className="size-6.5" strokeWidth={1.8} />
+              <HomeIcon className="size-14" strokeWidth={1.8} />
             </div>
           </div>
 

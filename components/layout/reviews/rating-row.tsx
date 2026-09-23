@@ -1,42 +1,42 @@
 import {
-  CircleCheck,
-  KeyRound,
-  Map,
-  MessageSquare,
-  SprayCan,
-  Tag,
-} from "lucide-react"
+  CheckCircleIcon,
+  KeyIcon,
+  MapIcon,
+  MessageIcon,
+  SprayIcon,
+  TagIcon,
+} from "@/app/icons/icons"
 
 const ratingItems = [
   {
     label: "Cleanliness",
     value: "5.0",
-    icon: SprayCan,
+    icon: SprayIcon,
   },
   {
     label: "Accuracy",
     value: "5.0",
-    icon: CircleCheck,
+    icon: CheckCircleIcon,
   },
   {
     label: "Check-in",
     value: "5.0",
-    icon: KeyRound,
+    icon: KeyIcon,
   },
   {
     label: "Communication",
     value: "5.0",
-    icon: MessageSquare,
+    icon: MessageIcon,
   },
   {
     label: "Location",
     value: "4.8",
-    icon: Map,
+    icon: MapIcon,
   },
   {
     label: "Value",
     value: "4.8",
-    icon: Tag,
+    icon: TagIcon,
   },
 ]
 

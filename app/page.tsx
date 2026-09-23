@@ -7,8 +7,21 @@ import { Location } from "@/components/layout/location/location"
 import { Stays } from "@/components/layout/more-stays/stays"
 import { Reviews } from "@/components/layout/reviews/reviews"
 import { ThingsToKnow } from "@/components/layout/things-to-know/things-to-know"
+import { PhotoTour } from "@/components/photo-tour/photo-tour"
 
-export default function Page() {
+type Props = {
+  searchParams: Promise<{
+    view?: string
+  }>
+}
+
+export default async function Page({ searchParams }: Props) {
+  const { view } = await searchParams
+
+  if (view === "photos") {
+    return <PhotoTour />
+  }
+
   return (
     <div>
       <Navbar />

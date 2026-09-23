@@ -1,3 +1,4 @@
+import { KeyboardIcon } from "@/app/icons/icons"
 import { ChevronLeft, ChevronRight, Keyboard } from "lucide-react"
 
 const weekDays = ["S", "M", "T", "W", "T", "F", "S"]
@@ -163,8 +164,8 @@ export const Calendar = () => {
 
       {/* Footer */}
       <div className="mt-4.5 flex items-center justify-between">
-        <div className="inline-flex h-5.5 w-7.5 items-center justify-center rounded-sm border border-[#b0b0b0]">
-          <Keyboard className="size-4" strokeWidth={1.5} />
+        <div className="inline-flex h-5.5 w-7.5 items-center justify-center rounded-[4px] border border-[#b0b0b0]">
+          <KeyboardIcon className="size-5 text-black" strokeWidth={1.5} />
         </div>
 
         <button className="cursor-pointer border-0 bg-transparent text-sm font-medium underline underline-offset-2">
